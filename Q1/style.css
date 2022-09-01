@@ -1,0 +1,41 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 17px;
+  background-image: url('https://wallpapercave.com/wp/wp8255680.jpg');
+  background-size: 100% 120%
+}
+th{
+  background-color: rgba(255, 81, 0, 0.612);
+}
+td{
+  background-color: rgba(205, 212, 218, 0.659);
+}
+table, th, td {
+
+  justify-content: center;
+  text-align: center;
+  border: 2.5px solid white;
+  color: rgb(19, 17, 17);
+  width: 30rem;
+  
+}
+
+.table_1{
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+.table_2{
+  display: flex;
+  justify-content: center;
+}
+
+h2{
+margin-left: 45%;
+}
