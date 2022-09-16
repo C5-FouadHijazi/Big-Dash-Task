@@ -61,12 +61,8 @@ playerTeam1.forEach((element) => {
 $("#here_table_3").append("<tr><th>" + "Rate" + "</tr></th>");
 
 
-// sum 1 = sum 2
-//1-6 player 18%-12% === 16%-14% === 13%-17% from the sum and between 1-10
-// sum7 =  sum(1+6) - sum2
-// جخه
 let sum_2 = sum;
-console.log(sum_2);
+;
 let team_2_rates = [];
 
 team_2_rates[0] = Math.floor(0.06 * sum_2);
