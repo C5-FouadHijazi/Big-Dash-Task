@@ -1,101 +1,104 @@
 console.log("arrowTitle");
 
-
-//*checkhing that we workingon the body
+//*checking that we working's the body
 const body = $("body");
 
-
-
-//*Make A All Detailes Container Div
+//*Make A All Details Container Div
 const allDetailesDiv = $(`<div id="allDetailesDiv">
 </div>`);
 allDetailesDiv.appendTo(body);
 
 //Rate Team 1
 
-
-$('#here_table').append('<tr><th>' + "Rate" + '</tr></th>');
+$("#here_table").append("<tr><th>" + "Rate" + "</tr></th>");
 
 let team_1_rates = [];
-let team_2_rates = [];
-
 
 for (let i = 0; i < 7; i++) {
+  let rate = Math.ceil(Math.random() * 10);
 
-    let rate = Math.floor(Math.random() * 11);
+  if (team_1_rates.indexOf(rate) === -1) {
+    team_1_rates.push(rate);
 
-    if (team_1_rates.indexOf(rate) === -1) {
-        team_1_rates.push(rate);
-        team_2_rates.unshift(rate)
-
-        $('#here_table').append('<tr><td>' + team_1_rates[i] + '</td></tr>');
-    }
-    else
-        i--;
+    $("#here_table").append("<tr><td>" + team_1_rates[i] + "</td></tr>");
+  } else i--;
 }
 
-let sum = 0
+/*   const rndInt = randomIntFromInterval(1, 6) */
+/*  console.log(rndInt) */
+
+let sum = 0;
 for (let x = 0; x < team_1_rates.length; x++) {
-    sum += team_1_rates[x]
-    
+  sum += team_1_rates[x];
 }
-$('#here_table').append('<tr><td>' + sum + '</td></tr>');
+$("#here_table").append("<tr><td>" + sum + "</td></tr>");
 console.log(team_1_rates);
 console.log(sum);
 
-// Palyers Team 1
+// Players Team 1
 
-$('#here_table_2').append('<tr><th>' + "Player Name" + '</tr></th>');
+$("#here_table_2").append("<tr><th>" + "Player Name" + "</tr></th>");
 
-const playeTeam1 = ["Fouad", "Mustafa", "Samir", "Ali", "Shishani", "Afagani", "Kahaf", "Sum"]
+const playerTeam1 = [
+  "Fouad",
+  "Mustafa",
+  "Samir",
+  "Ali",
+  "Shishani",
+  "Afagani",
+  "Kahaf",
+  "Sum",
+];
 
-playeTeam1.forEach(element => {
-    return $('#here_table_2').append('<tr><td>' + element + '</td></tr>');
-
+playerTeam1.forEach((element) => {
+  return $("#here_table_2").append("<tr><td>" + element + "</td></tr>");
 });
 
 //----------------------------------------//
 
 //Rate Team 2
 
-;
-$('#here_table_3').append('<tr><th>' + "Rate" + '</tr></th>');
+$("#here_table_3").append("<tr><th>" + "Rate" + "</tr></th>");
 
+//here work
+// sum 1 = sum 2
+//1-6 player 18%-12% === 16%-14% === 13%-17% from the sum and between 1-10
+// sum7 =  sum(1+6) - sum2
+// جخه
+let sum_2 = sum;
+console.log(sum_2);
+let team_2_rates = [];
 
-console.log(team_2_rates);
+team_2_rates[0] = Math.floor(0.06 * sum_2);
+team_2_rates[1] = Math.floor(0.24 * sum_2);
+team_2_rates[2] = Math.floor(0.09 * sum_2);
+team_2_rates[3] = Math.floor(0.12 * sum_2);
+team_2_rates[4] = Math.floor(0.15 * sum_2);
+team_2_rates[5] = Math.floor(0.18 * sum_2);
+arraySum = team_2_rates.reduce((partialSum, a) => partialSum + a, 0);
+team_2_rates[6] = sum_2 - arraySum;
 
-let array2 = []
-
-for (let i = 0; i < team_1_rates.length; i++) {
-
-    if (array2.indexOf(team_2_rates[i]) === -1) {
-        array2.push(team_2_rates[i])
-    }
-
-    $('#here_table_3').append('<tr><td>' + team_2_rates[i] + '</td></tr>');
-
+for (let i = 0; i < team_2_rates.length -1; i++) {
+  $("#here_table_3").append("<tr><td>" + team_2_rates[i] + "</td></tr>");
 }
-console.log(array2);
+$("#here_table_3").append("<tr><td>" + team_2_rates[6] + "</td></tr>");
+$("#here_table_3").append("<tr><td>" + sum_2 + "</td></tr>");
 
-// Palyers Team 1
+// Players Team 1
 
-$('#here_table_4').append('<tr><th>' + "Player Name" + '</tr></th>');
+$("#here_table_4").append("<tr><th>" + "Player Name" + "</tr></th>");
 
-const playeTeam2 = ["Basher", "Amine", "Omar", "Mahmoud", "Ammar", "Fadi", "Samir" ,"Sum"]
+const playerTeam2 = [
+  "Basher",
+  "Amine",
+  "Omar",
+  "Mahmoud",
+  "Ammar",
+  "Fadi",
+  "Samir",
+  "Sum",
+];
 
-playeTeam2.forEach(element => {
-    return $('#here_table_4').append('<tr><td>' + element + '</td></tr>');
-
+playerTeam2.forEach((element) => {
+  return $("#here_table_4").append("<tr><td>" + element + "</td></tr>");
 });
-
-
-let sum_2 = 0
-for (let x = 0; x < team_2_rates.length; x++) {
-    sum_2 += team_2_rates[x]
-    
-}
-
-$('#here_table_3').append('<tr><td>' + sum_2 + '</td></tr>');
-
-
-
